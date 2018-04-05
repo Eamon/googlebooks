@@ -1,3 +1,9 @@
+/* This is an index file for a Google Cloud Functions program that accesses the Google Books API.
+
+You will need a Google Cloud platform account and create a project which is authorized to access the Google Books API 
+The Google Books API appears to have a limit of about 1,000 requests a day under the free tier 
+
+*/
 
 exports.getBook = function getBook (req, res){
  		 
