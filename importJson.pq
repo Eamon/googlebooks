@@ -1,5 +1,5 @@
 let
-    Source = Json.Document(File.Contents("G:\My Drive\Oscail\OpenBooks\0404-books.json")),
+    Source = Json.Document(File.Contents("books.json")),
     #"Converted to Table" = Table.FromList(Source, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
     #"Expanded Column1" = Table.ExpandRecordColumn(#"Converted to Table", "Column1", {"volumeInfo", "saleInfo", "accessInfo"}, {"Column1.volumeInfo", "Column1.saleInfo", "Column1.accessInfo"}),
     #"Expanded Column1.saleInfo" = Table.ExpandRecordColumn(#"Expanded Column1", "Column1.saleInfo", {"isEbook", "retailPrice"}, {"Column1.saleInfo.isEbook", "Column1.saleInfo.retailPrice"}),
